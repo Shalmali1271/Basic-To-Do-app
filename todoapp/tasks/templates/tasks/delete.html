@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="delete-item">
+            <h3>Are you sure you want to delete {{item}}?</h3>
+            <div class="delete-item-btn">
+                <a class="delete" href="{% url 'list' %}">Cancel</a>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <input class="update" type="submit" value="Confirm">
+                </form>
+            </div>
+        </div>
+        <br><br>
+    </body>
+</html>

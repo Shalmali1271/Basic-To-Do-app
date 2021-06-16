@@ -1,0 +1,44 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "style.css" %}'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class='update-heading'>Hello There!</div>
+    <div class='add-item'>
+        <form method="POST" action="">
+            {% csrf_token %}
+                <!-- {{form.as_p}} -->
+            <div class='update-input-field'>
+
+                {% render_field form.username placeholder="Username" %}
+                <span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+
+                {% render_field form.email placeholder="Email" %}
+
+                {% render_field form.password1 placeholder="Password" %}
+                <span class="helptext">
+                    <div>
+                        <li>Your password can’t be too similar to your other <br> personal information.</li>
+                        <li>Your password must contain at least 8 characters.</li>
+                        <li>Your password can’t be a commonly used password.</li>
+                        <li>Your password can’t be entirely numeric.</li>
+                    </div>
+                </span>
+                {% render_field form.password2 placeholder="Confirm Password" %}
+                <span class="helptext">Enter the same password as before, for verification.</span>        
+            </div>
+            <br>
+            <input type="submit" class='update-submit-item' name="Create User"> 
+            <p class="helptext" style="text-align: center; font-size: 14px; line-height: 0em;">Already have an account? <a href="{% url 'login' %}" style="text-decoration: none; color : white;">Login</a></p>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class='update-heading'>Welcome Back!</div>
+    <div class='add-item'>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input type='text' name="username" placeholder='Username'>
+            <input type='password' name="password" placeholder='Password' >
+            <input type="submit" class='update-submit-item' value="Login">
+            {% for message in messages %}
+                <br>
+                <p class="helptext" style="font-size: 18px; text-align: center;">{{message}}</p>
+                <br>
+            {% endfor %}
+            <p class="helptext" style="text-align: center; font-size: 14px; line-height: 0em;">Don't have an account? <a href="{% url 'signin' %}" style="text-decoration: none; color : white;">Signup</a></p>
+        </form>
+    </div>
+</body>
+</html>

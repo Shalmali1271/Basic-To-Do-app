@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <br>
+            <div class="heading">
+                <h3>Task List </h3>
+            </div>
+            <br>
+            <div class="add-item">
+                <form method="POST" action="/" autocomplete="off">
+                    {% csrf_token %}
+                    <div class="input-field">
+                        {{form.title}}
+                        <label>Add Item</label>
+                    </div>
+                    <input type="submit" class="submit-item" value="Create Task">
+                </form>
+            </div>
+            <br><br>
+            {% for task in tasks %}
+            <div class="item-list">
+                {% if task.complete == True %}
+                    <strike class="item">{{task.title}}</strike>
+                {% else %}
+                    <span class="item">{{task.title}}</span>
+                {% endif %}
+                <a class="update" href="{% url 'Update_task' task.id %}">Update</a>
+                <a class="delete" href="{% url 'delete' task.id %}">Delete</a>
+            </div>
+            <br>
+            {% endfor %}
+    </body>
+</html>

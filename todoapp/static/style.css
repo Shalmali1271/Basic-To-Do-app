@@ -1,0 +1,256 @@
+body{
+    background-color: rgb(89, 185, 230);
+    background-image: url("bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    transition: 0.3s;
+    width: 35%;
+    margin-left: 35%;
+    margin-top: 3%;
+    border-radius: 5px;
+}
+.heading{
+    margin-left: 33.3%;
+    font-family: 'New Tegomin', serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+.update-heading{
+    margin-left: 25%;
+    margin-top: 30%;
+    padding-top: 10px;
+    font-size: 30px;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+}
+.add-item{
+    margin-left: 25%;
+    display : flex;
+    flex-flow: row wrap;
+    align-items: center;
+    color: black;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+}
+.delete-item {
+    margin-top: 30%;
+    margin-left: 10%;
+    display : flex;
+    flex-flow: row wrap;
+    align-items: center;
+    color: black;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+}
+.input-field{
+    display: inline;
+    align-self: flex-start;
+    position:relative;
+	margin-bottom:25px;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+}
+.input-field label{
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color: BLACK;	
+    pointer-event:none;
+	transition: all 0.5s ease-in-out;
+    opacity: 0.6;
+}
+.input-field input{ 
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+    border:0;
+    border-bottom:1px solid #555;  
+    background:transparent;
+    width: 50%;
+    padding:8px 0 5px 0;
+    font-size:16px;
+    color: BLACK;
+}
+.input-field input:focus{ 
+   border:none;	
+   outline:none;
+   border-bottom:1px solid #5b5d5e;	
+}
+.input-field input:focus ~ label,
+.input-field input:valid ~ label{
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+	top:-12px;
+	font-size:12px;
+	opacity: 0.3;
+}
+.update-input-field{
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+    display: inline;
+    align-self: flex-start;
+    position:relative;
+	margin-bottom:25px;
+    width: 100%;
+}
+.update-input-field label{
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+	position:absolute;
+	top:0px;
+	left:0px;
+    width: 200px;
+	font-size:16px;
+	color: BLACK;	
+    pointer-event:none;
+	transition: all 0.5s ease-in-out;
+    opacity: 0.6;
+}
+.update-input-field input{ 
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+    border:0;
+    border-bottom:1px solid #555;  
+    background:transparent;
+    width: 200px;
+    padding:8px 0 5px 0;
+    font-size:16px;
+    color: BLACK;
+}
+.update-input-field input:focus{ 
+   font-family: 'New Tegomin', serif;
+   font-weight: bold;
+   border:none;	
+   outline:none;
+   border-bottom:1px solid #5b5d5e;	
+}
+.update-input-field input:focus ~ label,
+.update-input-field input:valid ~ label{
+	top:-12px;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+	font-size:12px;
+	opacity: 0.3;
+}
+.submit-item{
+    display: inline;
+    align-self: flex-end;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.5);
+    border-radius: 8px;
+    width: 90px;
+    height: 25px;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+    margin-left: 5px;
+    border: none;
+    background-color: rgb(104, 223, 213);
+}
+.submit-item:hover{
+    box-shadow: 0 4px 9px 0 rgba(0,0,0,0.5);
+    background-color: rgb(55, 179, 146);
+}
+.item-list{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 10px;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+    background-color: rgb(119, 198, 243);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    width: 75%;
+    margin-left: 10%;
+    border-radius: 8px;
+    justify-content: space-evenly;
+}
+.delete-item-btn{
+    display: flex;
+    flex-flow: row-reverse wrap;
+    align-items: center;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+    background-color: transparent;
+    width: 50%;
+    margin-left: 15%;
+    justify-content: space-evenly;
+}
+.item{
+    display: inline;
+    width: 50%;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+}
+.delete{
+    display: inline;
+    width: 50px;
+    padding: 5px;
+    margin-right: 0px;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+    margin-left: 15px;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.5);
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(248, 156, 133);
+    text-decoration: none;
+    color: black;
+}
+.delete:hover{
+    box-shadow: 0 4px 9px 0 rgba(0,0,0,0.5);
+    background-color: rgb(165, 101, 90);
+}
+.update{
+    display: inline;
+    width: 45x;
+    padding: 5px;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.5);
+    border-radius: 8px;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(104, 223, 213);
+    text-decoration: none;
+    color: black;
+}
+.update:hover{
+    box-shadow: 0 4px 9px 0 rgba(0,0,0,0.5);
+    background-color: rgb(55, 179, 146);
+}
+.checkbox{
+    display: inline;
+    align-self: flex-start;
+    width: 20px;
+    padding: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+}
+.update-submit-item{
+    display: inline;
+    align-self: flex-end;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.5);
+    border-radius: 8px;
+    width: 100px;
+    height: 25px;
+    margin-left: 5px;
+    border: none;
+    background-color: rgb(104, 223, 213);
+}
+.update-submit-item:hover{
+    box-shadow: 0 4px 9px 0 rgba(0,0,0,0.5);
+    background-color: rgb(55, 179, 146);
+}
+.helptext {
+    text-align: left;
+    line-height: 1.3em;
+    font-weight: 100;
+    letter-spacing: 0px;
+    letter-spacing: 0.02rem;
+    font-size: 12px;
+  }
