@@ -11,20 +11,34 @@
     <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class='update-heading'>Welcome Back!</div>
-    <div class='add-item'>
-        <form method="POST" action="">
-            {% csrf_token %}
-            <input type='text' name="username" placeholder='Username'>
-            <input type='password' name="password" placeholder='Password' >
-            <input type="submit" class='update-submit-item' value="Login">
-            {% for message in messages %}
-                <br>
-                <p class="helptext" style="font-size: 18px; text-align: center;">{{message}}</p>
-                <br>
-            {% endfor %}
-            <p class="helptext" style="text-align: center; font-size: 14px; line-height: 0em;">Don't have an account? <a href="{% url 'signin' %}" style="text-decoration: none; color : white;">Signup</a></p>
-        </form>
+    <div class="fakebody-another">
+        <br>
+        <div class='update-heading'>Welcome Back!</div>
+        <div class="addition-item">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <br><br>
+                <div class="update-input-field">
+                    {% render_field form.username %}
+                    <label>Username</label>
+                    <br><br>
+                </div>
+                <div class="update-input-field">
+                    {% render_field form.password %}
+                    <label>Password</label>
+                    <br><br><br>
+                </div>
+                <input type="submit" class='update-submit-item' style="margin-left: 5vw;" value="Login">
+                {% for message in messages %}
+                    <br>
+                    <p class="helptext" style="font-size: 18px; text-align: center;">{{message}}</p>
+                    <br>
+                {% endfor %}
+                <br><br>
+                <p class="helptext" style="text-align: center; font-size: 14px; line-height: 0em;">Don't have an account? <a href="{% url 'register' %}" style="text-decoration: none; color : white;">Signup</a></p>
+                <br><br>
+            </form>
+        </div>
     </div>
 </body>
 </html>

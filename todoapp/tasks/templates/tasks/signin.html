@@ -11,34 +11,50 @@
     <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class='update-heading'>Hello There!</div>
-    <div class='add-item'>
-        <form method="POST" action="">
-            {% csrf_token %}
-                <!-- {{form.as_p}} -->
-            <div class='update-input-field'>
-
-                {% render_field form.username placeholder="Username" %}
-                <span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
-
-                {% render_field form.email placeholder="Email" %}
-
-                {% render_field form.password1 placeholder="Password" %}
-                <span class="helptext">
-                    <div>
-                        <li>Your password can’t be too similar to your other <br> personal information.</li>
-                        <li>Your password must contain at least 8 characters.</li>
-                        <li>Your password can’t be a commonly used password.</li>
-                        <li>Your password can’t be entirely numeric.</li>
+    <div class="fakebody-another">
+        <br>
+        <div class='update-heading' style="margin-left: 10vw;">Hello There!</div>
+        <div class='addition-item' style="margin-left: 5vw;">
+            <form method="POST" action="">
+                {% csrf_token %}
+                    <br>
+                    <div class="update-input-field">
+                        {% render_field form.username %}
+                        <label>Username</label>
                     </div>
-                </span>
-                {% render_field form.password2 placeholder="Confirm Password" %}
-                <span class="helptext">Enter the same password as before, for verification.</span>        
-            </div>
-            <br>
-            <input type="submit" class='update-submit-item' name="Create User"> 
-            <p class="helptext" style="text-align: center; font-size: 14px; line-height: 0em;">Already have an account? <a href="{% url 'login' %}" style="text-decoration: none; color : white;">Login</a></p>
-        </form>
+                    <br><br>
+                    <span class="helptext">150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+                    <br><br>
+
+                    <div class="update-input-field">
+                        {% render_field form.password1 %}
+                        <label>Password</label>
+                    </div>
+                    <br><br>
+                    <span class="helptext">
+                        <div>
+                            <li>Your password can’t be too similar to your other <br> personal information.</li>
+                            <li>Your password must contain at least 8 characters.</li>
+                            <li>Your password can’t be a commonly used password.</li>
+                            <li>Your password can’t be entirely numeric.</li>
+                        </div>
+                    </span>
+                    <br>
+
+                    <div class="update-input-field">
+                        {% render_field form.password2 %}
+                        <label>Confirm Password</label>
+                    </div>
+                    <br><br>
+                    <span class="helptext">Enter the same password as before, for verification.</span>
+                    <br><br>        
+                <br>
+                <input type="submit" class='update-submit-item' style="margin-left: 8vw;" name="Create User"> 
+                <br><br>
+                <p class="helptext" style="text-align: center; font-size: 16px; line-height: 0em;">Already have an account? <a href="{% url 'login' %}" style="text-decoration: none; color : white;">Login</a></p>
+                <br>
+            </form>
+        </div>
     </div>
 </body>
 </html>

@@ -12,17 +12,17 @@
                 <h3>Task List </h3>
             </div>
             <br>
-            <div class="add-item">
-                <form method="POST" action="/" autocomplete="off">
-                    {% csrf_token %}
-                    <div class="input-field">
-                        {{form.title}}
-                        <label>Add Item</label>
-                    </div>
-                    <input type="submit" class="submit-item" value="Create Task">
-                </form>
-            </div>
-            <br><br>
+            <!-- <div class="add-item"> -->
+                <!-- <form method="POST" action="/" autocomplete="off"> -->
+                    <!-- {% csrf_token %} -->
+                    <!-- <div class="input-field"> -->
+                        <!-- {{form.title}} -->
+                        <!-- <label>Add Item</label> -->
+                    <!-- </div> -->
+                    <!-- <input type="submit" class="submit-item" value="Create Task"> -->
+                <!-- </form> -->
+            <!-- </div> -->
+            <!-- <br><br> -->
             {% for task in tasks %}
             <div class="item-list">
                 {% if task.complete == True %}
@@ -30,8 +30,8 @@
                 {% else %}
                     <span class="item">{{task.title}}</span>
                 {% endif %}
-                <a class="update" href="{% url 'Update_task' task.id %}">Update</a>
-                <a class="delete" href="{% url 'delete' task.id %}">Delete</a>
+                <!-- <a class="update" href="{% url 'Update_task' task.id %}">Update</a> -->
+                <!-- <a class="delete" href="{% url 'delete' task.id %}">Delete</a> -->
             </div>
             <br>
             {% endfor %}

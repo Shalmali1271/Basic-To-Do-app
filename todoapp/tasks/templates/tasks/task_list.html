@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <br>
+        <div class="fakebody-another">
+            {% if request.user.is_authenticated %}
+                <p class="update-heading" style="margin-left: 7vw;">Hello There, {{request.user}}!</p>
+                <a class="delete"  href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a class="delete" href="{% url 'login' %}">Login</a>
+            {% endif %}
+            <h3 class="heading" style="margin-top: 0px;">Task List </h3>
+            <br>
+            <a class="add-item" href="{% url 'create-task' %}">Add Task</a>
+            <br><br>
+            <form method="GET" action="" autocomplete="off">
+                {% csrf_token %}
+                <div class="update-input-field" style="margin-left: 20%;">
+                    <input type="text" name="search-area" value="{{search_input}}">
+                    <label>Search Task</label>
+                </div>
+                <input type="submit" class="submit-item" value="Search">
+            </form>
+            <br>
+            {% for task in tasks %}
+            <div class="item-list">
+                {% if task.complete == True %}
+                    <strike class="item">{{task.title}}</strike>
+                {% else %}
+                    <span class="item">{{task.title}}</span>
+                {% endif %}
+                <a class="update" href="{% url 'task' task.id %}">View</a>
+                <a class="update" href="{% url 'update-task' task.id %}">Edit</a>
+                <a class="update" href="{% url 'delete-task' task.id %}">Delete</a>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+    </body>
+</html>

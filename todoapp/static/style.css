@@ -3,30 +3,88 @@ body{
     background-image: url("bg.png");
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+}
+.fakebody{
+    position: relative;
+    background: transparent;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
     transition: 0.3s;
     width: 35%;
-    margin-left: 35%;
-    margin-top: 3%;
+    margin-left: 10%;
+    margin-top: 2%;
+    border-radius: 5px;
+}
+.fakebody-another{
+    position: relative;
+    background: transparent;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    transition: 0.3s;
+    width: 35%;
+    margin-left: 30%;
+    margin-top: 2%;
     border-radius: 5px;
 }
 .heading{
-    margin-left: 33.3%;
+    display: inline-flex;
+    position: relative;
+    flex-flow: row wrap;
+    margin-left: 33%;
+    float: left;
     font-family: 'New Tegomin', serif;
     font-size: 30px;
     font-weight: bold;
+}
+.title_detail{
+    display: flex;
+    position: relative;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 10px;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+    background-color: rgb(119, 198, 243);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    width: 70%;
+    margin-left: 13%;
+    border-radius: 8px;
+    justify-content: space-evenly;
+    font-size: 1.8vw;
 }
 .update-heading{
-    margin-left: 25%;
-    margin-top: 30%;
-    padding-top: 10px;
-    font-size: 30px;
+    margin-left: 23%;
+    margin-top: 0%;
+    padding-top: 0px;
+    font-size: 2.5vw;
     font-family: 'New Tegomin', serif;
     font-weight: bold;
+    position: relative;
 }
 .add-item{
-    margin-left: 25%;
+    display : inline-block;
+    position: inherit;
+    /* flex-flow: row wrap; */
+    align-self: center;
+    width: 75px;
+    padding: 5px;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.5);
+    border-radius: 8px;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(77, 215, 250);
+    text-decoration: none;
+    color: black;
+    margin-left: 40%; 
+}
+.add-item:hover{
+    box-shadow: 0 4px 9px 0 rgba(0,0,0,0.5);
+    background-color: rgb(45, 130, 151);
+}
+.addition-item{
+    margin-left: 22%;
     display : flex;
+    position: relative;
     flex-flow: row wrap;
     align-items: center;
     color: black;
@@ -34,11 +92,12 @@ body{
     font-weight: bold;
 }
 .delete-item {
-    margin-top: 30%;
+    margin-top: 0%;
     margin-left: 10%;
     display : flex;
     flex-flow: row wrap;
     align-items: center;
+    position: relative;
     color: black;
     font-family: 'New Tegomin', serif;
     font-weight: bold;
@@ -91,9 +150,10 @@ body{
     font-family: 'New Tegomin', serif;
     font-weight: bold;
     display: inline;
+    background:transparent;
     align-self: flex-start;
     position:relative;
-	margin-bottom:25px;
+	margin-bottom:10px;
     width: 100%;
 }
 .update-input-field label{
@@ -133,11 +193,13 @@ body{
     font-family: 'New Tegomin', serif;
     font-weight: bold;
 	font-size:12px;
+    border: none;
 	opacity: 0.3;
 }
 .submit-item{
     display: inline;
     align-self: flex-end;
+    position: relative;
     box-shadow: 0 4px 6px 0 rgba(0,0,0,0.5);
     border-radius: 8px;
     width: 90px;
@@ -156,6 +218,7 @@ body{
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    position: relative;
     padding: 10px;
     font-family: 'New Tegomin', serif;
     font-weight: bold;
@@ -170,6 +233,7 @@ body{
     display: flex;
     flex-flow: row-reverse wrap;
     align-items: center;
+    position: relative;
     font-family: 'New Tegomin', serif;
     font-weight: bold;
     background-color: transparent;
@@ -180,17 +244,19 @@ body{
 .item{
     display: inline;
     width: 50%;
+    position: relative;
     font-family: 'New Tegomin', serif;
     font-weight: bold;
 }
 .delete{
-    display: inline;
+    display: inline-flex;
     width: 50px;
     padding: 5px;
-    margin-right: 0px;
+    position: relative;
+    margin-right: 5%;
     font-family: 'New Tegomin', serif;
     font-weight: bold;
-    margin-left: 15px;
+    float: right;
     box-shadow: 0 4px 6px 0 rgba(0,0,0,0.5);
     border-radius: 8px;
     border: none;
@@ -204,7 +270,7 @@ body{
 }
 .update{
     display: inline;
-    width: 45x;
+    position: relative;
     padding: 5px;
     box-shadow: 0 4px 6px 0 rgba(0,0,0,0.5);
     border-radius: 8px;
@@ -221,6 +287,7 @@ body{
 }
 .checkbox{
     display: inline;
+    position: relative;
     align-self: flex-start;
     width: 20px;
     padding: 10px;
@@ -231,6 +298,7 @@ body{
 }
 .update-submit-item{
     display: inline;
+    position: relative;
     align-self: flex-end;
     font-family: 'New Tegomin', serif;
     font-weight: bold;
@@ -248,9 +316,63 @@ body{
 }
 .helptext {
     text-align: left;
+    position: relative;
     line-height: 1.3em;
     font-weight: 100;
     letter-spacing: 0px;
     letter-spacing: 0.02rem;
-    font-size: 12px;
+    font-size: 13px;
   }
+#text-field{
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+    display: inline;
+    background:transparent;
+    align-self: flex-start;
+    position:relative;
+	margin-bottom:25px;
+    width: 100%;
+}
+#text-field label{
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+	position:absolute;
+	top:0px;
+	left:0px;
+    width: 200px;
+	font-size : 16px;
+	color: BLACK;	
+    pointer-event : none;
+	transition: all 0.5s ease-in-out;
+    opacity: 0.6;
+}
+#text-field textarea{ 
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+    border: none;
+    border-bottom:1px solid #555;  
+    background:transparent;
+    width: 200px;
+    padding:8px 0 5px 0;
+    font-size:16px;
+    color: BLACK;
+}
+#text-field textarea:focus{ 
+   font-family: 'New Tegomin', serif;
+   font-weight: bold;
+   border : none;	
+   outline : none;
+   border-bottom : 1px solid #5b5d5e;	
+}
+#text-field textarea:focus ~ label{
+	top:-12px;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+	font-size:12px;
+	opacity: 0.3;
+}
+.back-icon a img{
+    position: relative;
+    margin-top: 50px;
+    margin-left: 280px;
+}

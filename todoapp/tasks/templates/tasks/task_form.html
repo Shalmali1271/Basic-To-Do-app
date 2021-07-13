@@ -1,0 +1,42 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="back-icon">
+            <a href="{% url 'tasks' %}">
+                <img alt="Back" src="{% static 'back_icon.png' %}" width="40vw" height="40vw">
+            </a>
+        </div>
+        <div class="fakebody">
+            <div class="update-heading">
+                <h3>Task</h3>
+            </div>
+            <div class="addition-item">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <div class="update-input-field">
+                        {% render_field form.title %}
+                        <label>Name of task</label>
+                        <br><br>
+                    </div>
+                    <div id="text-field">
+                        {% render_field form.description style="width: 200px; height: 20px;" %}
+                        <label>Description of task</label>
+                        <br><br>
+                    </div>
+                    {% render_field form.complete class="checkbox" %}
+                    {% render_field form.complete.label %}
+                    <br><br>
+                    <input type="submit" class="update-submit-item" value="Add Task">
+                    <br><br><br>
+                </form>
+            </div> 
+        </div> 
+    </body>
+</html>

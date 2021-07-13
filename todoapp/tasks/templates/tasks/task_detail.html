@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="back-icon">
+            <a href="{% url 'tasks' %}">
+                <img alt="Back" src="{% static 'back_icon.png' %}" width="40vw" height="40vw">
+            </a>
+        </div>
+        <div class="fakebody">
+            <div class="update-heading">
+                <h3>Task Details</h3>
+            </div>
+            <h4 class="title_detail">
+                Task Name : {{object}}
+                <p style="font-size: 20px;">
+                    Task Description : {{object.description}}
+                    <br><br>
+                    Task Completed : {{object.complete}}
+                </p>
+            </h4>
+            <br>
+        </div>
+    </body>
+</html>
